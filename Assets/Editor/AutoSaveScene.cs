@@ -18,7 +18,7 @@ public class AutoSaveScene
 
 		// Register for autosaves.
 		// Change this number to modify the autosave interval.
-		RegisterOnEditorUpdate(1);
+		RegisterOnEditorUpdate(5);
 	}
 
 	public static void RegisterOnEditorUpdate(int interval)
