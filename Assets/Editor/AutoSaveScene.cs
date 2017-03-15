@@ -3,6 +3,7 @@ using System.IO;
 using System.Globalization;
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 [InitializeOnLoad]
 public class AutoSaveScene
@@ -47,16 +48,17 @@ public class AutoSaveScene
 	/// </summary>
 	private static void SaveScene()
 	{
-		Debug.Log("Auto saving scene: " + EditorApplication.currentScene);
+		Debug.Log("Auto saving scene: " + EditorSceneManager.GetActiveScene());
 
 		EnsureAutoSavePathExists();
 
 		// Get the new saved scene name.
-		var newName = GetNewSceneName(EditorApplication.currentScene);
+
+		var newName = GetNewSceneName(EditorSceneManager.GetActiveScene().name);
 		var folder = Path.Combine("Assets", SAVE_FOLDER);
 
-		EditorApplication.SaveScene(Path.Combine(folder, newName), true);
-		EditorApplication.SaveAssets();
+        EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),Path.Combine(folder, newName), true);
+		AssetDatabase.SaveAssets();
 	}
 
 	/// <summary>
