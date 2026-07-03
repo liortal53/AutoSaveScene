@@ -1,0 +1,17 @@
+{
+  "name": "com.liortal53.autosavescene",
+  "version": "1.0.0",
+  "displayName": "Auto Save Scene",
+  "description": "Automatically saves timestamped backup copies of the currently open scene in the Unity Editor at a configurable interval.",
+  "unity": "2018.4",
+  "keywords": [
+    "editor",
+    "autosave",
+    "scene",
+    "backup"
+  ],
+  "author": {
+    "name": "liortal53",
+    "url": "https://github.com/liortal53"
+  }
+}
